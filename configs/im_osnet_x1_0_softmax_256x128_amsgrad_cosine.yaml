@@ -4,12 +4,12 @@ model:
 
 data:
   type: 'image'
-  sources: ['market1501']
-  targets: ['market1501']
+  sources: ['market1501', 'cuhk03']
+  targets: ['market1501', 'cuhk03']
   height: 256
   width: 128
   combineall: False
-  transforms: ['random_flip']
+  transforms: ['random_flip', 'random_erase']
   save_dir: 'log/osnet_x1_0_market1501_softmax_cosinelr'
 
 loss:
@@ -20,8 +20,8 @@ loss:
 train:
   optim: 'amsgrad'
   lr: 0.0015
-  max_epoch: 250
-  batch_size: 64
+  max_epoch: 20
+  batch_size: 128
   fixbase_epoch: 10
   open_layers: ['classifier']
   lr_scheduler: 'cosine'
@@ -32,4 +32,4 @@ test:
   normalize_feature: False
   evaluate: False
   eval_freq: -1
-  rerank: False
+  rerank: True

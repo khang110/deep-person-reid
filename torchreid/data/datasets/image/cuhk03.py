@@ -240,6 +240,7 @@ class CUHK03(ImageDataset):
                 if relabel:
                     pid = pid2label[pid]
                 img_path = osp.join(img_dir, img_name)
+                print("HERE IS: ", img_path)
                 tmp_set.append((img_path, int(pid), camid))
                 unique_pids.add(pid)
             return tmp_set, len(unique_pids), len(idxs)

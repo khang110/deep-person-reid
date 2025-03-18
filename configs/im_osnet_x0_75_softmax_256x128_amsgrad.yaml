@@ -4,8 +4,8 @@ model:
 
 data:
   type: 'image'
-  sources: ['market1501']
-  targets: ['market1501']
+  sources: ['market1501', 'cuhk01']
+  targets: ['market1501', 'cuhk01']
   height: 256
   width: 128
   combineall: False
@@ -20,7 +20,7 @@ loss:
 train:
   optim: 'amsgrad'
   lr: 0.0015
-  max_epoch: 150
+  max_epoch: 25
   batch_size: 64
   fixbase_epoch: 10
   open_layers: ['classifier']

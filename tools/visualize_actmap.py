@@ -42,6 +42,7 @@ def visactmap(
 
     for target in list(test_loader.keys()):
         data_loader = test_loader[target]['query'] # only process query images
+        print(data_loader)
         # original images and activation maps are saved individually
         actmap_dir = osp.join(save_dir, 'actmap_' + target)
         mkdir_if_missing(actmap_dir)
